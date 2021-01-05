@@ -18,7 +18,12 @@ if !ENV["PR_COMMENT"]
   exit(1)
 end
 
+if ENV["SHA8"]
+  puts "SHA8: #{SHA8}"
+end
+
 message = ENV["PR_COMMENT"]
+puts "PR comment message: #{PR_COMMENT}"
 check_duplicate_msg = ARGV[1]
 repo = event["repository"]["full_name"]
 
